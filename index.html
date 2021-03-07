@@ -49,6 +49,77 @@
     </div>
 </template>
 
+<template id="main-city">
+    <div class="main-city-charts">
+        <h2 id="main-location"></h2>
+        <div class="img-and-temperature">
+            <img id="main-img" alt="Weather icon">
+            <span class="temperature" id="main-temperature"></span>
+        </div>
+    </div>
+    <div class="main-city-values">
+        <ul class="city-charts-ul">
+            <li>
+                <span class="chart-name">Wind</span>
+                <span class="chart-value" id="main-wind"></span>
+            </li>
+            <li>
+                <span class="chart-name">Cloudiness</span>
+                <span class="chart-value" id="main-clouds"></span>
+            </li>
+            <li>
+                <span class="chart-name">Pressure</span>
+                <span class="chart-value" id="main-pressure"></span>
+            </li>
+            <li>
+                <span class="chart-name">Humidity</span>
+                <span class="chart-value" id="main-humidity"></span>
+            </li>
+            <li>
+                <span class="chart-name">Coordinates</span>
+                <span class="chart-value" id="main-coords"></span>
+            </li>
+        </ul>
+    </div>
+</template>
+
+<template id="fav-city">
+    <li id = "start">
+        <div class="city-charts">
+            <div class="city-charts-left">
+                <h3 id="fav-location"></h3>
+                <span class="temperature" id="fav-temperature"></span>
+                <img id="fav-img" alt="Weather icon">
+            </div>
+            <button class="btn" id="close-btn" onclick="removeCity(this.value)">x</button>
+        </div>
+        <div class="city-values">
+            <ul class="city-charts-ul">
+                <li>
+                    <span class="chart-name">Wind</span>
+                    <span class="chart-value" id="fav-wind"></span>
+                </li>
+                <li>
+                    <span class="chart-name">Cloudiness</span>
+                    <span class="chart-value" id="fav-clouds"></span>
+                </li>
+                <li>
+                    <span class="chart-name">Pressure</span>
+                    <span class="chart-value" id="fav-pressure"></span>
+                </li>
+                <li>
+                    <span class="chart-name">Humidity</span>
+                    <span class="chart-value" id="fav-humidity"></span>
+                </li>
+                <li>
+                    <span class="chart-name">Coordinates</span>
+                    <span class="chart-value" id="fav-coords"></span>
+                </li>
+            </ul>
+        </div>
+    </li>
+</template>
+
 </body>
 
 </html>
