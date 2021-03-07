@@ -6,3 +6,25 @@ body {
     margin: 0;
     padding: 0;
 }
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "main";
+    margin: 20px;
+}
+
+header {
+    grid-area: header;
+    display: flex;
+    flex-direction: row;
+}
+
+h1 {
+    font-weight: normal;
+    font-size: 35px;
+    color: #728188;
+    margin-top: 30px;
+}
