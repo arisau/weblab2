@@ -1,3 +1,8 @@
+window.onload = () => {
+    updateWeather();
+    loadCitiesFromStorage();
+};
+
 function updateWeather() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(success, error);
@@ -124,4 +129,39 @@ function loadCitiesFromStorage() {
         let key = localStorage.key(i);
         PostCityWeather(localStorage.getItem(key));
     }
+}
+
+function PostCityWeather(cityName) {
+
+    const loader = getLoader();
+    const ul = document.getElementById("cities-ul");
+    ul.appendChild(loader);
+
+    const weatherData = fetchByCityName(cityName)
+        .then((result) => {
+            if (!result || result.cod === "404" || result.cod === "400") {
+                alert("Unable to load " + cityName + " weather");
+                ul.getElementsByClassName("loader")[0].remove();
+                return;
+            }
+            if (!localStorage[result.id]) {
+                localStorage.setItem(result.id, cityName);
+            }
+            //loader.id = result.id + "loader";
+            const template = getTemplate(result, "fav-");
+            //document.getElementById(loader.id).remove();
+            ul.getElementsByClassName("loader")[0].remove();
+            ul.appendChild(template);
+        })
+}
+
+function removeCity(cityId) {
+    localStorage.removeItem(cityId);
+    document.getElementById(cityId).remove();
+
+}
+
+function getLoader() {
+    const loader = document.getElementById("loader").content;
+    return document.importNode(loader, true);
 }
