@@ -28,3 +28,94 @@ h1 {
     color: #728188;
     margin-top: 30px;
 }
+
+.btn-update {
+    color: #727f85;
+    text-decoration: none;
+    background-color: #c9d2d7;
+    border: solid 1px #c9d2d7;
+    border-radius: 5px;
+    padding: 10px 70px;
+    margin: 20px 0 30px 150px;
+}
+
+.for-small-screens {
+    display: none;
+}
+
+.main {
+    grid-area: main;
+    display: grid;
+    grid-template-areas:
+      "main-city-section"
+      "favourites-section"
+      "cities-ul";
+}
+
+.main-city-section {
+    grid-area: main-city-section;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 100px;
+    grid-template-areas:
+    "main-city-charts main-city-values"
+}
+
+h2 {
+    font-size: 33px;
+    color: #737f8b;
+    font-weight: bold;
+}
+
+.main-city-charts {
+    grid-area: main-city-charts;
+}
+
+.main-city-charts .img-and-temperature {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.main-city-charts img {
+    width: 145px;
+    height: 145px;
+    border: 5px solid #737f8b;
+}
+
+.main-city-charts .img-and-temperature span {
+    font-size: 150px;
+    margin-top: 50px;
+}
+
+.temperature {
+    font-size: 50px;
+    color: #7d7d7d;
+}
+
+.main-city-values {
+    grid-area: main-city-values;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.city-charts-ul li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #a7afb1;
+    flex-direction: row;
+    color: #f0fafc;
+    height: 25px;
+    padding: 5px 15px 5px;
+    margin: 10px 0 10px 0;
+}
+
+.city-charts-ul .chart-name {
+    font-weight: bold;
+}
