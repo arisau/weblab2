@@ -9,7 +9,45 @@
     <script defer src="script.js"></script>
 </head>
 
+<body>
+<div class="grid-container">
+    <header>
+        <h1>Weather here</h1>
+        <button class="btn-update for-large-screens" onclick="updateWeather()">
+            Update geolocation
+        </button>
+        <button class="btn-update for-small-screens" onclick="updateWeather()">
+            &#x21bb;
+        </button>
+    </header>
+    <main>
+        <section class="main-city-section" id="main-city-section">
 
+        </section>
+        <section class="favourites-section">
+            <h2>Favourites</h2>
+            <form action="#" class="add-city-form" id="add-city-form" method="POST" onsubmit="addCity(); return false">
+                <input id="form-city-name" name="add-city" placeholder="Add new city" type="text">
+                <input class="btn" type="submit" value="+">
+            </form>
+        </section>
+        <ul class="cities-ul" id="cities-ul">
+
+        </ul>
+    </main>
+</div>
+
+<template id="loader">
+    <div class="loader">
+        <p>Please wait, loading data</p>
+        <div class="lds-ellipsis">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</template>
 
 </body>
 
