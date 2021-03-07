@@ -259,3 +259,59 @@ h3 {
         transform: translate(24px, 0);
     }
 }
+
+@media screen and (max-width: 1000px) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+        "header"
+        "main";
+    }
+
+    .btn-update {
+        background-color: #c9d2d7;
+        color: #727f85;
+        font-size: 25px;
+        text-decoration: none;
+        border: solid 1px #c9d2d7;
+        border-radius: 5px;
+        padding: 5px 15px;
+        margin: 20px 0 30px 50px;
+    }
+
+    .for-large-screens {
+        display: none;
+    }
+
+    .for-small-screens {
+        display: block;
+    }
+
+    .main-city-section {
+        grid-area: main-city-section;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+        "main-city-charts"
+        "main-city-values";
+        align-items: center;
+    }
+
+    .favourites-section {
+        grid-area: favourites;
+        display: grid;
+        grid-template-areas:
+        "favourites-left"
+        "favourites-right";
+        align-items: center;
+    }
+
+    .cities-ul {
+        grid-area: cities;
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+}
+
